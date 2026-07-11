@@ -1,7 +1,21 @@
 # Codex Obsidian Knowledge
 
 Privacy-first local memory workflow for Codex and Obsidian. It imports completed Codex sessions as redacted Review notes, then compiles only approved and privacy-cleared knowledge.
-
+详细功能介绍：
+codex-obsidian-knowledge 是一个独立、可本地部署的 Codex Skill，用于把 Codex 的已结束会话逐步沉淀到 Obsidian Vault，而不是把原始对话直接复制成知识库。
+核心功能包括：
+只读扫描 Codex JSONL 会话，不移动、修改或删除原始记录。
+自动识别活跃会话并标记为 pending_active，避免导入仍在写入的内容。
+对手机号、邮箱、身份证号、医疗编号、API Key 和常见凭据进行脱敏。
+使用 SHA-256 去重，避免重复导入同一会话。
+将内容先写入 Obsidian 的 Review 层，而非直接视为长期知识。
+通过 approval_status、privacy_status 和 conflict_status 三重门禁控制知识编译。
+仅将“已批准、隐私已清除、无未解决冲突”的摘要写入正式项目知识或通用知识页。
+使用受管区块写入，保留用户在知识页中手工补充的内容。
+提供可选的 Windows 计划任务，每 6 小时自动执行本地维护。
+默认将运行时脱敏包和日志放到 D 盘，减少系统盘压力。
+提供一键安装、卸载、回滚说明和 fixture 测试。
+让 Codex 在新任务开始时优先读取已批准的 Obsidian 项目记忆，而不默认加载原始会话、Review 或敏感内容。
 ## Install
 
 ```powershell

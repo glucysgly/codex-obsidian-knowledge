@@ -1,0 +1,4 @@
+runtime/
+*.lock
+private-fixture.txt
+*.log

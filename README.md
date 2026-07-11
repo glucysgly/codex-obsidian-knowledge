@@ -1,6 +1,12 @@
 # Codex Obsidian Knowledge
 
 Privacy-first local memory workflow for Codex and Obsidian. It imports completed Codex sessions as redacted Review notes, then compiles only approved and privacy-cleared knowledge.
+简介：这是一个把 Codex 聊天内容整理进 Obsidian 的“小管家”。
+它会定期检查已经结束的 Codex 对话，把有用内容整理成 Obsidian 笔记；涉及手机号、邮箱、密钥或可能的患者信息会先打码。新内容先放进“待审核区”，不会直接当成长期结论。
+你确认过的内容，才会被整理进正式知识库。这样以后再次打开 Codex 做项目时，它可以优先读取你已经确认的项目进展、决定和资料，不必每次从头解释。
+它不会删除或改动原始聊天记录，也不会自动把敏感内容、猜测或未确认结论写进正式知识库
+
+
 详细功能介绍：
 codex-obsidian-knowledge 是一个独立、可本地部署的 Codex Skill，用于把 Codex 的已结束会话逐步沉淀到 Obsidian Vault，而不是把原始对话直接复制成知识库。
 核心功能包括：
